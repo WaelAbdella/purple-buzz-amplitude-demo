@@ -131,8 +131,19 @@ https://templatemo.com/tm-561-purple-buzz
     var sessionId = amplitude.getInstance()._sessionId;
     console.log(sessionId);
     var buttonClicked = function () {
-      amplitude.logEvent('clicked button');
+        var event = 'Button Clicked';
+        var eventProperties = {
+        "hover time": "100ms"
+};
+amplitude.getInstance().logEvent(event, eventProperties);
+
     };
+
+    var event = 'Button Clicked';
+var eventProperties = {
+    "hover time": "100ms"
+};
+amplitude.getInstance().logEvent(event, eventProperties);
 
   </script>
   <!-- amplitude snippet end -->
