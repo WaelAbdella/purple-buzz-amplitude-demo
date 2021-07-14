@@ -157,13 +157,9 @@ https://templatemo.com/tm-561-purple-buzz
         var subject = document.getElementById('floatingsubject').value
         var textarea = document.getElementById('floatingtextarea').value
 
-        var eventProperties = {
-        'Email' : email,
-        'Name' : name,
-        'Phone' : phone,
-        'Company' : company,
-        'Subject' : subject,         
-        'Textarea' : textarea,        };
+        var eventProperties = {       
+        'Textarea' : textarea
+     };
 
         amplitude.getInstance().logEvent('Send Contact Message', eventProperties);
       };
@@ -175,12 +171,12 @@ https://templatemo.com/tm-561-purple-buzz
         amplitude.getInstance().logEvent('Share on Social Media', eventProperties);
     }
 
-var contactDirectly = function (platform) {
-    var eventProperties = {
-     "Platform": platform
-    };
-    amplitude.getInstance().logEvent('Contact Directly', eventProperties);
-}
+    var contactDirectly = function (platform) {
+        var eventProperties = {
+         "Contact Type": platform
+        };
+        amplitude.getInstance().logEvent('Contact Directly', eventProperties);
+    }
 
   </script>
 
