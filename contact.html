@@ -149,7 +149,23 @@ https://templatemo.com/tm-561-purple-buzz
     amplitude.logEvent('Page View',pageProperties);
 
     var contactMessage = function () {
-        amplitude.logEvent('Send Contact Message');
+
+        var email = document.getElementById('floatingemail').value
+        var name = document.getElementById('floatingname').value
+        var phone = document.getElementById('floatingphone').value
+        var company = document.getElementById('floatingcompany').value
+        var subject = document.getElementById('floatingsubject').value
+        var textarea = document.getElementById('floatingtextarea').value
+
+        var eventProperties = {
+        'Email' : email,
+        'Name' : name,
+        'Phone' : phone,
+        'Company' : company,
+        'Subject' : subject,         
+        'Textarea' : textarea,        };
+
+        amplitude.getInstance().logEvent('Send Contact Message', eventProperties);
       };
 
       var shareOnSocials = function (platform) {

@@ -147,7 +147,11 @@ https://templatemo.com/tm-561-purple-buzz
     amplitude.logEvent('Page View',pageProperties);
 
     var subscribe = function () {
-        amplitude.logEvent('Subscribe to mailing list');
+        var email = document.getElementById('email').value
+        var eventProperties = {
+         "Email": email
+        };
+        amplitude.getInstance().logEvent('Subscribe to mailing list', eventProperties);
       };
 
       var shareOnSocials = function (platform) {
@@ -417,7 +421,7 @@ var contactDirectly = function (platform) {
                     <div class="input-group py-3">
                     
                         <input name="email" type="text" class="form-control form-control-lg rounded-pill rounded-end" id="email" placeholder="Your Email" aria-label="Your Email">
-                        <button onclick="subscribe()" class="btn btn-secondary text-white btn-lg rounded-pill rounded-start px-lg-4" type="submit">Subscribe</button>
+                        <button onclick="subscribe()" required class="btn btn-secondary text-white btn-lg rounded-pill rounded-start px-lg-4" type="submit">Subscribe</button>
                     </div>
                     <p class="text-center light-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua.</p>
                     </form>

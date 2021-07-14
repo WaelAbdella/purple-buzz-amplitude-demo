@@ -148,7 +148,11 @@ https://templatemo.com/tm-561-purple-buzz
     amplitude.logEvent('Page View',pageProperties);
 
     var leaveComment = function () {
-        amplitude.logEvent('Leave Comment');
+        var title = document.querySelector("div.worksingle-content > h2").textContent;
+        var eventProperties = {
+         "Article Title": title
+        };
+        amplitude.getInstance().logEvent('Leave Comment', eventProperties);
       };
 
 
