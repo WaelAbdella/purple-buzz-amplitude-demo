@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+   
+
+
     <title>Purple Buzz - Contact Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,163 +25,51 @@ https://templatemo.com/tm-561-purple-buzz
 
 -->
     
-
-
-
-    <!-- amplitude snippet -->
-<script type="text/javascript">
-    (function (e, t) {
-      var n = e.amplitude || { _q: [], _iq: {} };
-      var r = t.createElement('script');
-      r.type = 'text/javascript';
-      r.integrity =
-        'sha384-u0hlTAJ1tNefeBKwiBNwB4CkHZ1ck4ajx/pKmwWtc+IufKJiCQZ+WjJIi+7C6Ntm';
-      r.crossOrigin = 'anonymous';
-      r.async = true;
-      r.src = 'https://cdn.amplitude.com/libs/amplitude-8.1.0-min.gz.js';
-      r.onload = function () {
-        if (!e.amplitude.runQueuedFunctions) {
-          console.log('[Amplitude] Error: could not load SDK');
-        }
-      };
-      var i = t.getElementsByTagName('script')[0];
-      i.parentNode.insertBefore(r, i);
-      function s(e, t) {
-        e.prototype[t] = function () {
-          this._q.push([t].concat(Array.prototype.slice.call(arguments, 0)));
-          return this;
-        };
-      }
-      var o = function () {
-        this._q = [];
-        return this;
-      };
-      var a = [
-        'add',
-        'append',
-        'clearAll',
-        'prepend',
-        'set',
-        'setOnce',
-        'unset',
-        'preInsert',
-        'postInsert',
-        'remove',
-      ];
-      for (var c = 0; c < a.length; c++) {
-        s(o, a[c]);
-      }
-      n.Identify = o;
-      var u = function () {
-        this._q = [];
-        return this;
-      };
-      var l = [
-        'setProductId',
-        'setQuantity',
-        'setPrice',
-        'setRevenueType',
-        'setEventProperties',
-      ];
-      for (var p = 0; p < l.length; p++) {
-        s(u, l[p]);
-      }
-      n.Revenue = u;
-      var d = [
-        'init',
-        'logEvent',
-        'logRevenue',
-        'setUserId',
-        'setUserProperties',
-        'setOptOut',
-        'setVersionName',
-        'setDomain',
-        'setDeviceId',
-        'enableTracking',
-        'setGlobalUserProperties',
-        'identify',
-        'clearUserProperties',
-        'setGroup',
-        'logRevenueV2',
-        'regenerateDeviceId',
-        'groupIdentify',
-        'onInit',
-        'logEventWithTimestamp',
-        'logEventWithGroups',
-        'setSessionId',
-        'resetSessionId',
-      ];
-      function v(e) {
-        function t(t) {
-          e[t] = function () {
-            e._q.push([t].concat(Array.prototype.slice.call(arguments, 0)));
-          };
-        }
-        for (var n = 0; n < d.length; n++) {
-          t(d[n]);
-        }
-      }
-      v(n);
-      n.getInstance = function (e) {
-        e = (!e || e.length === 0 ? '$default_instance' : e).toLowerCase();
-        if (!Object.prototype.hasOwnProperty.call(n._iq, e)) {
-          n._iq[e] = { _q: [] };
-          v(n._iq[e]);
-        }
-        return n._iq[e];
-      };
-      e.amplitude = n;
-    })(window, document);
-    amplitude.getInstance().init('d9a8265419719195aeea531dcb7cc1df');
+ <!--Segment Snippet Start-->
+ <script>
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="nqDe1FqQIitIonESDgrNnNxcIwcRd51F";;analytics.SNIPPET_VERSION="4.15.3";
+    analytics.load("nqDe1FqQIitIonESDgrNnNxcIwcRd51F");
+    analytics.page();
+    }}();
   </script>
-  <!-- amplitude snippet end -->
+<!--Segment Snippet End-->
+
 <script>
-    amplitude.init(
-      'd9a8265419719195aeea531dcb7cc1df',
-      null,
-      { includeReferrer: true, includeUtm: true, includeGclid: true },
-      function () {
-        alert(amplitude.options.deviceId);
-      }
-    );
-
-    var pageProperties  = {
-        "Page Name": "Contact"
-    };
-    amplitude.setVersionName('Web');
-    amplitude.logEvent('Page View',pageProperties);
-
     var contactMessage = function () {
+    var vemail = document.getElementById('floatingemail').value
+    var vfirst_name = document.getElementById('floatingname').value
+    var vlast_name = document.getElementById('floatingsubject').value
+    var vphone = document.getElementById('floatingphone').value
+    var vcompany = document.getElementById('floatingcompany').value
+    var vtextarea = document.getElementById('floatingtextarea').value
 
-        var email = document.getElementById('floatingemail').value
-        var name = document.getElementById('floatingname').value
-        var phone = document.getElementById('floatingphone').value
-        var company = document.getElementById('floatingcompany').value
-        var subject = document.getElementById('floatingsubject').value
-        var textarea = document.getElementById('floatingtextarea').value
-
-        var eventProperties = {       
-        'Message' : textarea
-     };
-
-        amplitude.getInstance().logEvent('Send Contact Message', eventProperties);
-      };
-
-      var shareOnSocials = function (platform) {
-        var eventProperties = {
-         "Platform": platform
-        };
-        amplitude.getInstance().logEvent('Share on Social Media', eventProperties);
+    analytics.identify("123944",
+    {
+    first_name: vfirst_name,
+    last_name: vlast_name,
+    email: vemail,
+    phone: vphone,
+    company:{
+        employee_count: vcompany
     }
+});
 
-    var contactDirectly = function (platform) {
-        var eventProperties = {
-         "Contact Type": platform
-        };
-        amplitude.getInstance().logEvent('Contact Directly', eventProperties);
-    }
+    analytics.group("12345",
+    {
+        industry: 'Technology'
+    });
 
-  </script>
+    analytics.track("Contact Us clicked", {
+        page_type: "Home",
+        user_type: "marketing qualified lead"
+    });
+}
+</script>
+
+
+
+
+ 
 
 </head>
 
@@ -305,8 +196,7 @@ https://templatemo.com/tm-561-purple-buzz
 
             <!-- Start Contact Form -->
             <div class="col-lg-8 ">
-                <form class="contact-form row" method="post" action="#" role="form">
-
+              
                     <div class="col-lg-6 mb-4">
                         <div class="form-floating">
                             <input type="text" class="form-control form-control-lg light-300" id="floatingname" name="inputname" placeholder="Name">
@@ -330,30 +220,29 @@ https://templatemo.com/tm-561-purple-buzz
 
                     <div class="col-lg-6 mb-4">
                         <div class="form-floating">
-                            <input type="text" class="form-control form-control-lg light-300" id="floatingcompany" name="inputcompany" placeholder="Company Name">
-                            <label for="floatingcompany light-300">Company Name</label>
+                            <input type="text" class="form-control form-control-lg light-300" id="floatingcompany" name="inputcompany" placeholder="Company size">
+                            <label for="floatingcompany light-300">Company size</label>
                         </div>
                     </div><!-- End Input Company Name -->
 
                     <div class="col-12">
                         <div class="form-floating mb-4">
-                            <input type="text" class="form-control form-control-lg light-300" id="floatingsubject" name="inputsubject" placeholder="Subject">
-                            <label for="floatingsubject light-300">Subject</label>
+                            <input type="text" class="form-control form-control-lg light-300" id="floatingsubject" name="inputsubject" placeholder="Last Name">
+                            <label for="floatingsubject light-300">Last Name</label>
                         </div>
                     </div><!-- End Input Subject -->
 
                     <div class="col-12">
                         <div class="form-floating mb-3">
-                            <textarea class="form-control light-300" rows="8" placeholder="Message" id="floatingtextarea"></textarea>
-                            <label for="floatingtextarea light-300">Message</label>
+                            <textarea class="form-control light-300" rows="8" placeholder="country" id="floatingtextarea"></textarea>
+                            <label for="floatingtextarea light-300">country</label>
                         </div>
                     </div><!-- End Textarea Message -->
 
                     <div class="col-md-12 col-12 m-auto text-end">
-                        <button onClick="contactMessage()" type="submit" class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-300">Send Message</button>
+                        <a onClick="contactMessage()" type="button" class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-300">Send Message</a>
                     </div>
 
-                </form>
             </div>
             <!-- End Contact Form -->
 
